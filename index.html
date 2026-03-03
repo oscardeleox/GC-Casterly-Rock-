@@ -159,6 +159,11 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      flex-shrink: 0;
+    }
+    .nav-right .btn {
+      min-width: 150px;
+      justify-content: center;
     }
     .nav-phone {
       font-size: 0.8rem;
@@ -881,8 +886,8 @@
 
         <div class="nav-right">
           <div class="lang-toggle">
-            <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
-            <button class="lang-btn" id="btnES" onclick="setLang('es')">ES</button>
+            <button class="lang-btn active" id="btnEN" onclick="setLang('en')">English</button>
+            <button class="lang-btn" id="btnES" onclick="setLang('es')">Spanish</button>
           </div>
           <a href="tel:9567772551" class="nav-phone">(956) 777-2551</a>
           <a href="#cta" class="btn btn-black btn-sm t" data-en="Book a Call" data-es="Reservar Llamada">Book a Call</a>
@@ -1178,48 +1183,48 @@
         <div class="ai-panel reveal reveal-d2">
           <div class="ai-panel-bar">
             <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
-            <span class="panel-label">GC Automation Engine — Live Workflow</span>
+            <span class="panel-label t" data-en="GC Automation Engine — Live Workflow" data-es="Motor de Automatización GC — Flujo en Vivo">GC Automation Engine — Live Workflow</span>
           </div>
           <div class="ai-steps">
             <div class="ai-step active">
               <div class="step-icon">📥</div>
               <div class="step-info">
-                <h5>New client inquiry received</h5>
-                <p>Auto-captured from website form</p>
+                <h5 class="t" data-en="New client inquiry received" data-es="Nueva consulta de cliente recibida">New client inquiry received</h5>
+                <p class="t" data-en="Auto-captured from website form" data-es="Capturada automáticamente del formulario web">Auto-captured from website form</p>
               </div>
-              <span class="step-badge badge-done">Done</span>
+              <span class="step-badge badge-done t" data-en="Done" data-es="Listo">Done</span>
             </div>
             <div class="ai-step active">
               <div class="step-icon">📧</div>
               <div class="step-info">
-                <h5>Welcome email + intake form sent</h5>
-                <p>Personalized, instant — no manual effort</p>
+                <h5 class="t" data-en="Welcome email + intake form sent" data-es="Correo de bienvenida + formulario enviado">Welcome email + intake form sent</h5>
+                <p class="t" data-en="Personalized, instant — no manual effort" data-es="Personalizado, instantáneo — sin esfuerzo manual">Personalized, instant — no manual effort</p>
               </div>
-              <span class="step-badge badge-done">Done</span>
+              <span class="step-badge badge-done t" data-en="Done" data-es="Listo">Done</span>
             </div>
             <div class="ai-step active">
               <div class="step-icon">📅</div>
               <div class="step-info">
-                <h5>Consultation booked automatically</h5>
-                <p>Synced to calendar, reminder scheduled</p>
+                <h5 class="t" data-en="Consultation booked automatically" data-es="Consulta agendada automáticamente">Consultation booked automatically</h5>
+                <p class="t" data-en="Synced to calendar, reminder scheduled" data-es="Sincronizada al calendario, recordatorio programado">Synced to calendar, reminder scheduled</p>
               </div>
-              <span class="step-badge badge-live">Live</span>
+              <span class="step-badge badge-live t" data-en="Live" data-es="Activo">Live</span>
             </div>
             <div class="ai-step">
               <div class="step-icon">📁</div>
               <div class="step-info">
-                <h5>Client file created in QuickBooks</h5>
-                <p>Data flows directly — zero re-entry</p>
+                <h5 class="t" data-en="Client file created in QuickBooks" data-es="Expediente del cliente creado en QuickBooks">Client file created in QuickBooks</h5>
+                <p class="t" data-en="Data flows directly — zero re-entry" data-es="Los datos fluyen directamente — sin re-ingreso">Data flows directly — zero re-entry</p>
               </div>
-              <span class="step-badge badge-next">Next</span>
+              <span class="step-badge badge-next t" data-en="Next" data-es="Siguiente">Next</span>
             </div>
             <div class="ai-step">
               <div class="step-icon">📊</div>
               <div class="step-info">
-                <h5>First financial report generated</h5>
-                <p>Delivered automatically within 48 hours</p>
+                <h5 class="t" data-en="First financial report generated" data-es="Primer informe financiero generado">First financial report generated</h5>
+                <p class="t" data-en="Delivered automatically within 48 hours" data-es="Entregado automáticamente en 48 horas">Delivered automatically within 48 hours</p>
               </div>
-              <span class="step-badge badge-next">Next</span>
+              <span class="step-badge badge-next t" data-en="Next" data-es="Siguiente">Next</span>
             </div>
           </div>
         </div>
