@@ -807,6 +807,33 @@
     /* ─────────────────────────────────────────────
        RESPONSIVE
     ───────────────────────────────────────────── */
+    /* ── Language Toggle Button ── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: var(--gray-100);
+      border-radius: 100px;
+      padding: 3px;
+      border: 1px solid var(--gray-200);
+    }
+    .lang-btn {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--gray-500);
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--black);
+      color: var(--white);
+    }
+
     @media (max-width: 960px) {
       .pillars-grid  { grid-template-columns: 1fr; }
       .cards-grid    { grid-template-columns: 1fr; }
@@ -846,15 +873,19 @@
         </a>
 
         <ul class="nav-links">
-          <li><a href="#finance">Financial Services</a></li>
-          <li><a href="#ai">AI Automation</a></li>
-          <li><a href="#why">About</a></li>
-          <li><a href="#values">Values</a></li>
+          <li><a href="#finance" class="t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</a></li>
+          <li><a href="#ai" class="t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</a></li>
+          <li><a href="#why" class="t" data-en="About" data-es="Nosotros">About</a></li>
+          <li><a href="#values" class="t" data-en="Values" data-es="Valores">Values</a></li>
         </ul>
 
         <div class="nav-right">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" id="btnES" onclick="setLang('es')">ES</button>
+          </div>
           <a href="tel:9567772551" class="nav-phone">(956) 777-2551</a>
-          <a href="#cta" class="btn btn-black btn-sm">Book a Call</a>
+          <a href="#cta" class="btn btn-black btn-sm t" data-en="Book a Call" data-es="Reservar Llamada">Book a Call</a>
         </div>
 
         <button class="nav-burger" id="burger" aria-label="Open menu">
@@ -864,11 +895,11 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#finance" onclick="closeMobile()">Financial Services</a>
-      <a href="#ai"      onclick="closeMobile()">AI Automation</a>
-      <a href="#why"     onclick="closeMobile()">About</a>
-      <a href="#values"  onclick="closeMobile()">Values</a>
-      <a href="#cta" class="btn btn-black" onclick="closeMobile()">Book a Call</a>
+      <a href="#finance" onclick="closeMobile()" class="t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</a>
+      <a href="#ai"      onclick="closeMobile()" class="t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</a>
+      <a href="#why"     onclick="closeMobile()" class="t" data-en="About" data-es="Nosotros">About</a>
+      <a href="#values"  onclick="closeMobile()" class="t" data-en="Values" data-es="Valores">Values</a>
+      <a href="#cta" class="btn btn-black t" onclick="closeMobile()" data-en="Book a Call" data-es="Reservar Llamada">Book a Call</a>
     </div>
   </nav>
 
@@ -882,36 +913,36 @@
 
         <div class="hero-tag">
           <div class="hero-tag-dot">GC</div>
-          Mission, TX · Rio Grande Valley · Bilingual
+          <span class="t" data-en="Mission, TX · Rio Grande Valley · Bilingual" data-es="Mission, TX · Valle del Río Grande · Bilingüe">Mission, TX · Rio Grande Valley · Bilingual</span>
         </div>
 
-        <h1>
+        <h1 class="t" data-en="Financial precision.<br>Intelligent automation." data-es="Precisión financiera.<br>Automatización inteligente.">
           Financial precision.<br>
           Intelligent automation.
         </h1>
 
-        <p class="hero-sub">
+        <p class="hero-sub t" data-en="We manage your books, cut your taxes, and automate the work slowing you down. Small-business focused. English and Spanish." data-es="Administramos sus libros, reducimos sus impuestos y automatizamos el trabajo que lo frena. Enfocados en pequeñas empresas. Inglés y español.">
           We manage your books, cut your taxes, and automate the work
           slowing you down. Small-business focused. English and Spanish.
         </p>
 
         <div class="hero-actions">
-          <a href="#cta"     class="btn btn-black">Book Free Consultation</a>
-          <a href="#pillars" class="btn btn-outline">See How We Help →</a>
+          <a href="#cta"     class="btn btn-black t" data-en="Book Free Consultation" data-es="Consulta Gratuita">Book Free Consultation</a>
+          <a href="#pillars" class="btn btn-outline t" data-en="See How We Help →" data-es="Cómo Ayudamos →">See How We Help →</a>
         </div>
 
         <div class="hero-divider">
           <div>
             <div class="stat-val">$40K+</div>
-            <div class="stat-lbl">Avg. tax savings per client / yr</div>
+            <div class="stat-lbl t" data-en="Avg. tax savings per client / yr" data-es="Ahorro promedio en impuestos / año">Avg. tax savings per client / yr</div>
           </div>
           <div>
             <div class="stat-val">80%</div>
-            <div class="stat-lbl">Reduction in manual admin work</div>
+            <div class="stat-lbl t" data-en="Reduction in manual admin work" data-es="Reducción en trabajo administrativo">Reduction in manual admin work</div>
           </div>
           <div>
             <div class="stat-val">48hr</div>
-            <div class="stat-lbl">Onboarding to first financial report</div>
+            <div class="stat-lbl t" data-en="Onboarding to first financial report" data-es="Del registro al primer informe financiero">Onboarding to first financial report</div>
           </div>
         </div>
 
@@ -926,7 +957,7 @@
   <div id="logobar">
     <div class="container">
       <div class="logobar-inner">
-        <span class="logobar-label">Integrated with</span>
+        <span class="logobar-label t" data-en="Integrated with" data-es="Integrado con">Integrated with</span>
         <div class="logobar-tools">
           <span class="tool-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -961,9 +992,9 @@
     <div class="container">
 
       <div class="pillars-head reveal">
-        <span class="eyebrow">What We Do</span>
-        <h2>Two disciplines. One firm.</h2>
-        <p>
+        <span class="eyebrow t" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</span>
+        <h2 class="t" data-en="Two disciplines. One firm." data-es="Dos disciplinas. Una firma.">Two disciplines. One firm.</h2>
+        <p class="t" data-en="Most accounting firms don't do AI. Most AI firms don't do finance. GC does both — under one roof, in two languages." data-es="La mayoría de las firmas contables no hacen IA. La mayoría de las firmas de IA no hacen finanzas. GC hace ambas — bajo un mismo techo, en dos idiomas.">
           Most accounting firms don't do AI. Most AI firms don't do finance.
           GC does both — under one roof, in two languages.
         </p>
@@ -977,15 +1008,15 @@
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
             </svg>
           </div>
-          <h3>Financial Services</h3>
-          <p>Your finances, handled with precision. Books, taxes, growth strategy, and wealth planning — all in one place.</p>
+          <h3 class="t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</h3>
+          <p class="t" data-en="Your finances, handled with precision. Books, taxes, growth strategy, and wealth planning — all in one place." data-es="Sus finanzas, manejadas con precisión. Libros, impuestos, estrategia de crecimiento y planificación patrimonial — todo en un solo lugar.">Your finances, handled with precision. Books, taxes, growth strategy, and wealth planning — all in one place.</p>
           <ul class="pillar-list">
-            <li>Business Finance Management</li>
-            <li>Tax Preparation &amp; IRS Strategy</li>
-            <li>Business Growth Advisory</li>
-            <li>Portfolio Strategy &amp; Wealth Planning</li>
+            <li class="t" data-en="Business Finance Management" data-es="Gestión Financiera Empresarial">Business Finance Management</li>
+            <li class="t" data-en="Tax Preparation &amp; IRS Strategy" data-es="Preparación de Impuestos y Estrategia con el IRS">Tax Preparation &amp; IRS Strategy</li>
+            <li class="t" data-en="Business Growth Advisory" data-es="Asesoría de Crecimiento Empresarial">Business Growth Advisory</li>
+            <li class="t" data-en="Portfolio Strategy &amp; Wealth Planning" data-es="Estrategia de Portafolio y Planificación Patrimonial">Portfolio Strategy &amp; Wealth Planning</li>
           </ul>
-          <a href="#finance" class="pillar-link">Explore Financial Services →</a>
+          <a href="#finance" class="pillar-link t" data-en="Explore Financial Services →" data-es="Explorar Servicios Financieros →">Explore Financial Services →</a>
         </div>
 
         <div class="pillar reveal reveal-d2">
@@ -1003,15 +1034,15 @@
               <line x1="1" y1="14" x2="4" y2="14"/>
             </svg>
           </div>
-          <h3>AI Automation</h3>
-          <p>Stop doing work a machine can do. We replace your repetitive tasks with intelligent automations — connected to your existing tools.</p>
+          <h3 class="t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</h3>
+          <p class="t" data-en="Stop doing work a machine can do. We replace your repetitive tasks with intelligent automations — connected to your existing tools." data-es="Deje de hacer el trabajo que una máquina puede hacer. Reemplazamos sus tareas repetitivas con automatizaciones inteligentes — conectadas a sus herramientas existentes.">Stop doing work a machine can do. We replace your repetitive tasks with intelligent automations — connected to your existing tools.</p>
           <ul class="pillar-list">
-            <li>Workflow &amp; Process Automation</li>
-            <li>QuickBooks / CRM / ERP Integration</li>
-            <li>AI-Powered Reporting &amp; Dashboards</li>
-            <li>Website &amp; Digital Infrastructure</li>
+            <li class="t" data-en="Workflow &amp; Process Automation" data-es="Automatización de Flujos y Procesos">Workflow &amp; Process Automation</li>
+            <li class="t" data-en="QuickBooks / CRM / ERP Integration" data-es="Integración QuickBooks / CRM / ERP">QuickBooks / CRM / ERP Integration</li>
+            <li class="t" data-en="AI-Powered Reporting &amp; Dashboards" data-es="Reportes y Tableros con IA">AI-Powered Reporting &amp; Dashboards</li>
+            <li class="t" data-en="Website &amp; Digital Infrastructure" data-es="Sitio Web e Infraestructura Digital">Website &amp; Digital Infrastructure</li>
           </ul>
-          <a href="#ai" class="pillar-link">Explore AI Automation →</a>
+          <a href="#ai" class="pillar-link t" data-en="Explore AI Automation →" data-es="Explorar Automatización con IA →">Explore AI Automation →</a>
         </div>
 
       </div>
@@ -1027,11 +1058,11 @@
 
       <div class="section-intro">
         <div class="reveal">
-          <span class="eyebrow eyebrow-gold">Financial Services</span>
-          <h2>Your money. Finally under control.</h2>
+          <span class="eyebrow eyebrow-gold t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</span>
+          <h2 class="t" data-en="Your money. Finally under control." data-es="Su dinero. Por fin bajo control.">Your money. Finally under control.</h2>
         </div>
         <div class="reveal reveal-d2">
-          <p>
+          <p class="t" data-en="We don't just file your taxes and hand you a bill. We actively manage your finances year-round. Small businesses in the RGV save an average of <strong>$10K–$40K per year</strong> working with us." data-es="No solo presentamos sus impuestos y le enviamos una factura. Administramos activamente sus finanzas durante todo el año. Las pequeñas empresas en el Valle del Río Grande ahorran en promedio <strong>$10K–$40K por año</strong> trabajando con nosotros.">
             We don't just file your taxes and hand you a bill. We actively manage
             your finances year-round. Small businesses in the RGV save an average
             of <strong>$10K–$40K per year</strong> working with us.
@@ -1043,47 +1074,47 @@
 
         <div class="scard reveal">
           <div class="scard-num">01</div>
-          <h4>Business Finance Management</h4>
-          <p>Day-to-day bookkeeping, payroll, vendor payments, and real-time P&amp;L reports. You always know exactly where your money is.</p>
+          <h4 class="t" data-en="Business Finance Management" data-es="Gestión Financiera Empresarial">Business Finance Management</h4>
+          <p class="t" data-en="Day-to-day bookkeeping, payroll, vendor payments, and real-time P&amp;L reports. You always know exactly where your money is." data-es="Contabilidad diaria, nómina, pagos a proveedores e informes de P&amp;L en tiempo real. Siempre sabrá exactamente dónde está su dinero.">Day-to-day bookkeeping, payroll, vendor payments, and real-time P&amp;L reports. You always know exactly where your money is.</p>
           <div class="tag-row">
-            <span class="tag">Bookkeeping</span>
-            <span class="tag">Payroll</span>
+            <span class="tag t" data-en="Bookkeeping" data-es="Contabilidad">Bookkeeping</span>
+            <span class="tag t" data-en="Payroll" data-es="Nómina">Payroll</span>
             <span class="tag">QuickBooks</span>
-            <span class="tag">Monthly Reports</span>
+            <span class="tag t" data-en="Monthly Reports" data-es="Informes Mensuales">Monthly Reports</span>
           </div>
         </div>
 
         <div class="scard reveal reveal-d2">
           <div class="scard-num">02</div>
-          <h4>Tax Solutions</h4>
-          <p>Business and personal tax filing, IRS representation, and strategic planning that reduces what you owe — legally and proactively.</p>
+          <h4 class="t" data-en="Tax Solutions" data-es="Soluciones Fiscales">Tax Solutions</h4>
+          <p class="t" data-en="Business and personal tax filing, IRS representation, and strategic planning that reduces what you owe — legally and proactively." data-es="Declaración de impuestos empresariales y personales, representación ante el IRS y planificación estratégica que reduce lo que debe — legal y proactivamente.">Business and personal tax filing, IRS representation, and strategic planning that reduces what you owe — legally and proactively.</p>
           <div class="tag-row">
-            <span class="tag">Business Taxes</span>
-            <span class="tag">Personal Filing</span>
-            <span class="tag">IRS Support</span>
-            <span class="tag">Tax Strategy</span>
+            <span class="tag t" data-en="Business Taxes" data-es="Impuestos Empresariales">Business Taxes</span>
+            <span class="tag t" data-en="Personal Filing" data-es="Declaración Personal">Personal Filing</span>
+            <span class="tag t" data-en="IRS Support" data-es="Apoyo con el IRS">IRS Support</span>
+            <span class="tag t" data-en="Tax Strategy" data-es="Estrategia Fiscal">Tax Strategy</span>
           </div>
         </div>
 
         <div class="scard reveal reveal-d1">
           <div class="scard-num">03</div>
-          <h4>Business Growth Advisory</h4>
-          <p>Profitability analysis, cash-flow forecasting, and custom dashboards that show you exactly where to grow and what to cut.</p>
+          <h4 class="t" data-en="Business Growth Advisory" data-es="Asesoría de Crecimiento Empresarial">Business Growth Advisory</h4>
+          <p class="t" data-en="Profitability analysis, cash-flow forecasting, and custom dashboards that show you exactly where to grow and what to cut." data-es="Análisis de rentabilidad, proyecciones de flujo de caja y tableros personalizados que le muestran exactamente dónde crecer y qué eliminar.">Profitability analysis, cash-flow forecasting, and custom dashboards that show you exactly where to grow and what to cut.</p>
           <div class="tag-row">
-            <span class="tag">Forecasting</span>
-            <span class="tag">KPI Dashboards</span>
-            <span class="tag">Profitability</span>
+            <span class="tag t" data-en="Forecasting" data-es="Proyecciones">Forecasting</span>
+            <span class="tag t" data-en="KPI Dashboards" data-es="Tableros KPI">KPI Dashboards</span>
+            <span class="tag t" data-en="Profitability" data-es="Rentabilidad">Profitability</span>
           </div>
         </div>
 
         <div class="scard reveal reveal-d3">
           <div class="scard-num">04</div>
-          <h4>Portfolio Strategy &amp; Wealth Planning</h4>
-          <p>Investment management and long-term wealth strategies tailored to business owners who want their money working as hard as they do.</p>
+          <h4 class="t" data-en="Portfolio Strategy &amp; Wealth Planning" data-es="Estrategia de Portafolio y Planificación Patrimonial">Portfolio Strategy &amp; Wealth Planning</h4>
+          <p class="t" data-en="Investment management and long-term wealth strategies tailored to business owners who want their money working as hard as they do." data-es="Gestión de inversiones y estrategias de riqueza a largo plazo diseñadas para propietarios de negocios que quieren que su dinero trabaje tan duro como ellos.">Investment management and long-term wealth strategies tailored to business owners who want their money working as hard as they do.</p>
           <div class="tag-row">
-            <span class="tag">Investments</span>
-            <span class="tag">Wealth Management</span>
-            <span class="tag">Retirement</span>
+            <span class="tag t" data-en="Investments" data-es="Inversiones">Investments</span>
+            <span class="tag t" data-en="Wealth Management" data-es="Gestión Patrimonial">Wealth Management</span>
+            <span class="tag t" data-en="Retirement" data-es="Jubilación">Retirement</span>
           </div>
         </div>
 
@@ -1100,9 +1131,9 @@
       <div class="ai-layout">
 
         <div class="ai-text">
-          <span class="eyebrow reveal">AI Automation</span>
-          <h2 class="reveal reveal-d1">Let the machine do<br>the repetitive work.</h2>
-          <p class="reveal reveal-d2">
+          <span class="eyebrow reveal t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</span>
+          <h2 class="reveal reveal-d1 t" data-en="Let the machine do<br>the repetitive work." data-es="Deje que la máquina haga<br>el trabajo repetitivo.">Let the machine do<br>the repetitive work.</h2>
+          <p class="reveal reveal-d2 t" data-en="You're spending hours every week on tasks that software can handle in seconds. We map your workflow, find the bottlenecks, and deploy automations that run 24/7 — no extra hires needed." data-es="Está dedicando horas cada semana a tareas que el software puede manejar en segundos. Mapeamos su flujo de trabajo, encontramos los cuellos de botella y desplegamos automatizaciones que funcionan 24/7 — sin contratar personal adicional.">
             You're spending hours every week on tasks that software can handle
             in seconds. We map your workflow, find the bottlenecks, and deploy
             automations that run 24/7 — no extra hires needed.
@@ -1112,34 +1143,34 @@
             <div class="ai-feat">
               <div class="ai-feat-num">01</div>
               <div class="ai-feat-txt">
-                <h4>Workflow Automation</h4>
-                <p>Invoicing, follow-ups, data entry, scheduling — automated and connected to your tools.</p>
+                <h4 class="t" data-en="Workflow Automation" data-es="Automatización de Flujos">Workflow Automation</h4>
+                <p class="t" data-en="Invoicing, follow-ups, data entry, scheduling — automated and connected to your tools." data-es="Facturación, seguimientos, captura de datos, programación — automatizados y conectados a sus herramientas.">Invoicing, follow-ups, data entry, scheduling — automated and connected to your tools.</p>
               </div>
             </div>
             <div class="ai-feat">
               <div class="ai-feat-num">02</div>
               <div class="ai-feat-txt">
-                <h4>System Integration</h4>
-                <p>QuickBooks, CRM, ERP, email — we make your software stack talk to each other.</p>
+                <h4 class="t" data-en="System Integration" data-es="Integración de Sistemas">System Integration</h4>
+                <p class="t" data-en="QuickBooks, CRM, ERP, email — we make your software stack talk to each other." data-es="QuickBooks, CRM, ERP, correo electrónico — hacemos que su software se comunique entre sí.">QuickBooks, CRM, ERP, email — we make your software stack talk to each other.</p>
               </div>
             </div>
             <div class="ai-feat">
               <div class="ai-feat-num">03</div>
               <div class="ai-feat-txt">
-                <h4>AI-Powered Reporting</h4>
-                <p>Live dashboards and automated reports so you always know your numbers in real time.</p>
+                <h4 class="t" data-en="AI-Powered Reporting" data-es="Reportes con IA">AI-Powered Reporting</h4>
+                <p class="t" data-en="Live dashboards and automated reports so you always know your numbers in real time." data-es="Tableros en vivo e informes automatizados para que siempre conozca sus números en tiempo real.">Live dashboards and automated reports so you always know your numbers in real time.</p>
               </div>
             </div>
             <div class="ai-feat">
               <div class="ai-feat-num">04</div>
               <div class="ai-feat-txt">
-                <h4>Website &amp; Digital Infrastructure</h4>
-                <p>Custom websites, booking systems, and client portals built for your business.</p>
+                <h4 class="t" data-en="Website &amp; Digital Infrastructure" data-es="Sitio Web e Infraestructura Digital">Website &amp; Digital Infrastructure</h4>
+                <p class="t" data-en="Custom websites, booking systems, and client portals built for your business." data-es="Sitios web personalizados, sistemas de reserva y portales de clientes creados para su negocio.">Custom websites, booking systems, and client portals built for your business.</p>
               </div>
             </div>
           </div>
 
-          <a href="#cta" class="btn btn-outline reveal reveal-d3" style="border-color:rgba(255,255,255,0.2);color:white;">
+          <a href="#cta" class="btn btn-outline reveal reveal-d3 t" style="border-color:rgba(255,255,255,0.2);color:white;" data-en="Automate My Business →" data-es="Automatizar Mi Negocio →">
             Automate My Business →
           </a>
         </div>
@@ -1206,36 +1237,36 @@
       <div class="why-layout">
 
         <div class="why-left reveal">
-          <span class="eyebrow">Why GC</span>
-          <h2>The only firm doing both — in two languages.</h2>
-          <p>
+          <span class="eyebrow t" data-en="Why GC" data-es="Por Qué GC">Why GC</span>
+          <h2 class="t" data-en="The only firm doing both — in two languages." data-es="La única firma que hace ambas — en dos idiomas.">The only firm doing both — in two languages.</h2>
+          <p class="t" data-en="In the Rio Grande Valley, most firms pick one lane. We built the firm that has both." data-es="En el Valle del Río Grande, la mayoría de las firmas eligen un solo camino. Nosotros construimos la firma que tiene ambos.">
             In the Rio Grande Valley, most firms pick one lane.
             We built the firm that has both.
           </p>
           <ul class="compare-list">
-            <li class="compare-item"><span class="ico-no">✗</span><span>Finance OR AI — not both</span></li>
-            <li class="compare-item"><span class="ico-no">✗</span><span>English only — no Spanish support</span></li>
-            <li class="compare-item"><span class="ico-no">✗</span><span>Reactive — only calls when things break</span></li>
-            <li class="compare-item"><span class="ico-no">✗</span><span>Manual processes, no automation</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span>Finance AND AI under one roof</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span>Fully bilingual — English &amp; Spanish</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span>Proactive — flags issues before you do</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span>Custom automations built for your business</span></li>
+            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="Finance OR AI — not both" data-es="Finanzas O IA — no ambas">Finance OR AI — not both</span></li>
+            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="English only — no Spanish support" data-es="Solo inglés — sin apoyo en español">English only — no Spanish support</span></li>
+            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="Reactive — only calls when things break" data-es="Reactivos — solo llaman cuando algo falla">Reactive — only calls when things break</span></li>
+            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="Manual processes, no automation" data-es="Procesos manuales, sin automatización">Manual processes, no automation</span></li>
+            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Finance AND AI under one roof" data-es="Finanzas Y automatización con IA bajo un mismo techo">Finance AND AI under one roof</span></li>
+            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Fully bilingual — English &amp; Spanish" data-es="Completamente bilingüe — inglés y español">Fully bilingual — English &amp; Spanish</span></li>
+            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Proactive — flags issues before you do" data-es="Proactivos — detectamos problemas antes que usted">Proactive — flags issues before you do</span></li>
+            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Custom automations built for your business" data-es="Automatizaciones personalizadas para su negocio">Custom automations built for your business</span></li>
           </ul>
         </div>
 
         <div class="why-right reveal reveal-d2">
           <div class="why-card">
-            <h4>Only firm in the Valley doing both</h4>
-            <p>No other firm in the Rio Grande Valley offers the combination of financial precision and AI implementation in English and Spanish.</p>
+            <h4 class="t" data-en="Only firm in the Valley doing both" data-es="La única firma en el Valle que hace ambas">Only firm in the Valley doing both</h4>
+            <p class="t" data-en="No other firm in the Rio Grande Valley offers the combination of financial precision and AI implementation in English and Spanish." data-es="Ninguna otra firma en el Valle del Río Grande ofrece la combinación de precisión financiera e implementación de IA en inglés y español.">No other firm in the Rio Grande Valley offers the combination of financial precision and AI implementation in English and Spanish.</p>
           </div>
           <div class="why-card">
-            <h4>Proactive, not reactive</h4>
-            <p>We monitor your finances continuously. We'll call you before a problem becomes expensive — not after.</p>
+            <h4 class="t" data-en="Proactive, not reactive" data-es="Proactivos, no reactivos">Proactive, not reactive</h4>
+            <p class="t" data-en="We monitor your finances continuously. We'll call you before a problem becomes expensive — not after." data-es="Monitoreamos sus finanzas continuamente. Le llamaremos antes de que un problema se vuelva costoso — no después.">We monitor your finances continuously. We'll call you before a problem becomes expensive — not after.</p>
           </div>
           <div class="why-card">
-            <h4>Built for small businesses</h4>
-            <p>Not enterprise software. Not cookie-cutter templates. Custom strategy built around how your specific business actually works.</p>
+            <h4 class="t" data-en="Built for small businesses" data-es="Diseñado para pequeñas empresas">Built for small businesses</h4>
+            <p class="t" data-en="Not enterprise software. Not cookie-cutter templates. Custom strategy built around how your specific business actually works." data-es="No es software empresarial. No son plantillas genéricas. Estrategia personalizada construida alrededor de cómo funciona su negocio específicamente.">Not enterprise software. Not cookie-cutter templates. Custom strategy built around how your specific business actually works.</p>
           </div>
         </div>
 
@@ -1251,29 +1282,29 @@
     <div class="container">
 
       <div class="values-head reveal">
-        <span class="eyebrow">Our Foundation</span>
-        <h2>Built on three things.</h2>
-        <p style="color:var(--gray-500)">Everything we do traces back to these.</p>
+        <span class="eyebrow t" data-en="Our Foundation" data-es="Nuestra Base">Our Foundation</span>
+        <h2 class="t" data-en="Built on three things." data-es="Construido sobre tres pilares.">Built on three things.</h2>
+        <p style="color:var(--gray-500)" class="t" data-en="Everything we do traces back to these." data-es="Todo lo que hacemos regresa a estos.">Everything we do traces back to these.</p>
       </div>
 
       <div class="values-grid">
         <div class="val-card reveal">
           <div class="val-num">01</div>
-          <h3>Integrity</h3>
-          <p>We tell you the truth about your numbers, your taxes, and what your business actually needs. No upsells. No surprises.</p>
-          <span class="val-es">Integridad. Lo que decimos, lo cumplimos.</span>
+          <h3 class="t" data-en="Integrity" data-es="Integridad">Integrity</h3>
+          <p class="t" data-en="We tell you the truth about your numbers, your taxes, and what your business actually needs. No upsells. No surprises." data-es="Le decimos la verdad sobre sus números, sus impuestos y lo que su negocio realmente necesita. Sin ventas adicionales. Sin sorpresas.">We tell you the truth about your numbers, your taxes, and what your business actually needs. No upsells. No surprises.</p>
+          <span class="val-es t" data-en="Integrity. What we say, we deliver." data-es="Integridad. Lo que decimos, lo cumplimos.">Integridad. Lo que decimos, lo cumplimos.</span>
         </div>
         <div class="val-card reveal reveal-d2">
           <div class="val-num">02</div>
-          <h3>Precision</h3>
-          <p>Finances don't tolerate "close enough." We build systems that are accurate, repeatable, and built to catch errors before they cost you money.</p>
-          <span class="val-es">Precisión. Cada número tiene un propósito.</span>
+          <h3 class="t" data-en="Precision" data-es="Precisión">Precision</h3>
+          <p class="t" data-en='Finances don&apos;t tolerate "close enough." We build systems that are accurate, repeatable, and built to catch errors before they cost you money.' data-es='Las finanzas no toleran el "casi." Construimos sistemas precisos, repetibles y diseñados para detectar errores antes de que le cuesten dinero.'>Finances don't tolerate "close enough." We build systems that are accurate, repeatable, and built to catch errors before they cost you money.</p>
+          <span class="val-es t" data-en="Precision. Every number has a purpose." data-es="Precisión. Cada número tiene un propósito.">Precisión. Cada número tiene un propósito.</span>
         </div>
         <div class="val-card reveal reveal-d3">
           <div class="val-num">03</div>
-          <h3>Innovation</h3>
-          <p>We don't use last year's tools. We stay at the front of AI — and bring those advantages directly to your business.</p>
-          <span class="val-es">Innovación. Las mejores herramientas, para ti.</span>
+          <h3 class="t" data-en="Innovation" data-es="Innovación">Innovation</h3>
+          <p class="t" data-en="We don't use last year's tools. We stay at the front of AI — and bring those advantages directly to your business." data-es="No usamos las herramientas del año pasado. Nos mantenemos a la vanguardia de la IA — y llevamos esas ventajas directamente a su negocio.">We don't use last year's tools. We stay at the front of AI — and bring those advantages directly to your business.</p>
+          <span class="val-es t" data-en="Innovation. The best tools, for you." data-es="Innovación. Las mejores herramientas, para ti.">Innovación. Las mejores herramientas, para ti.</span>
         </div>
       </div>
 
@@ -1303,17 +1334,17 @@
   ══════════════════════════════════════════ -->
   <section id="cta">
     <div class="container">
-      <span class="eyebrow reveal" style="display:block;text-align:center;">Get Started</span>
-      <h2 class="reveal reveal-d1">Ready to stop leaving<br>money on the table?</h2>
-      <p class="reveal reveal-d2">
+      <span class="eyebrow reveal t" style="display:block;text-align:center;" data-en="Get Started" data-es="Comenzar">Get Started</span>
+      <h2 class="reveal reveal-d1 t" data-en="Ready to stop leaving<br>money on the table?" data-es="¿Listo para dejar de<br>perder dinero?">Ready to stop leaving<br>money on the table?</h2>
+      <p class="reveal reveal-d2 t" data-en="Book a free 30-minute consultation. We'll review your current setup and show you exactly what we'd fix first. No commitment." data-es="Reserve una consulta gratuita de 30 minutos. Revisaremos su configuración actual y le mostraremos exactamente qué corregiríamos primero. Sin compromiso.">
         Book a free 30-minute consultation. We'll review your current setup
         and show you exactly what we'd fix first. No commitment.
       </p>
       <div class="cta-row reveal reveal-d3">
-        <a href="mailto:info@gcfinancialservices.org" class="btn btn-black">Book Free Consultation</a>
+        <a href="mailto:info@gcfinancialservices.org" class="btn btn-black t" data-en="Book Free Consultation" data-es="Reservar Consulta Gratuita">Book Free Consultation</a>
         <a href="tel:9567772551" class="btn btn-outline">📞 (956) 777-2551</a>
       </div>
-      <p class="cta-note reveal reveal-d4">
+      <p class="cta-note reveal reveal-d4 t" data-en='Or email <a href="mailto:info@gcfinancialservices.org">info@gcfinancialservices.org</a> · Available in English &amp; Spanish' data-es='O escríbanos a <a href="mailto:info@gcfinancialservices.org">info@gcfinancialservices.org</a> · Disponible en inglés y español'>
         Or email <a href="mailto:info@gcfinancialservices.org">info@gcfinancialservices.org</a>
         · Available in English &amp; Spanish
       </p>
@@ -1330,7 +1361,7 @@
 
         <div class="footer-brand">
           <img src="casterly_rock_strategy_1.png" alt="GC Financial Services" />
-          <p>Financial precision and AI automation for small businesses in the Rio Grande Valley. Bilingual. Proactive. Results-driven.</p>
+          <p class="t" data-en="Financial precision and AI automation for small businesses in the Rio Grande Valley. Bilingual. Proactive. Results-driven." data-es="Precisión financiera y automatización con IA para pequeñas empresas en el Valle del Río Grande. Bilingüe. Proactivo. Orientado a resultados.">Financial precision and AI automation for small businesses in the Rio Grande Valley. Bilingual. Proactive. Results-driven.</p>
           <div class="footer-contact">
             <a href="mailto:info@gcfinancialservices.org">✉ info@gcfinancialservices.org</a>
             <a href="tel:9567772551">📞 (956) 777-2551</a>
@@ -1339,39 +1370,39 @@
         </div>
 
         <div class="footer-col">
-          <h5>Financial Services</h5>
+          <h5 class="t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</h5>
           <ul>
-            <li><a href="#finance">Finance Management</a></li>
-            <li><a href="#finance">Tax Solutions</a></li>
-            <li><a href="#finance">Growth Advisory</a></li>
-            <li><a href="#finance">Portfolio Strategy</a></li>
+            <li><a href="#finance" class="t" data-en="Finance Management" data-es="Gestión Financiera">Finance Management</a></li>
+            <li><a href="#finance" class="t" data-en="Tax Solutions" data-es="Soluciones Fiscales">Tax Solutions</a></li>
+            <li><a href="#finance" class="t" data-en="Growth Advisory" data-es="Asesoría de Crecimiento">Growth Advisory</a></li>
+            <li><a href="#finance" class="t" data-en="Portfolio Strategy" data-es="Estrategia de Portafolio">Portfolio Strategy</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>AI Automation</h5>
+          <h5 class="t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</h5>
           <ul>
-            <li><a href="#ai">Workflow Automation</a></li>
-            <li><a href="#ai">System Integration</a></li>
-            <li><a href="#ai">AI Reporting</a></li>
-            <li><a href="#ai">Website Development</a></li>
+            <li><a href="#ai" class="t" data-en="Workflow Automation" data-es="Automatización de Flujos">Workflow Automation</a></li>
+            <li><a href="#ai" class="t" data-en="System Integration" data-es="Integración de Sistemas">System Integration</a></li>
+            <li><a href="#ai" class="t" data-en="AI Reporting" data-es="Reportes con IA">AI Reporting</a></li>
+            <li><a href="#ai" class="t" data-en="Website Development" data-es="Desarrollo Web">Website Development</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Company</h5>
+          <h5 class="t" data-en="Company" data-es="Empresa">Company</h5>
           <ul>
-            <li><a href="#why">About GC</a></li>
-            <li><a href="#values">Our Values</a></li>
-            <li><a href="#cta">Book a Consultation</a></li>
-            <li><a href="mailto:info@gcfinancialservices.org">Contact</a></li>
+            <li><a href="#why" class="t" data-en="About GC" data-es="Sobre GC">About GC</a></li>
+            <li><a href="#values" class="t" data-en="Our Values" data-es="Nuestros Valores">Our Values</a></li>
+            <li><a href="#cta" class="t" data-en="Book a Consultation" data-es="Reservar Consulta">Book a Consultation</a></li>
+            <li><a href="mailto:info@gcfinancialservices.org" class="t" data-en="Contact" data-es="Contacto">Contact</a></li>
           </ul>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 GC Financial Services. All rights reserved.</p>
+        <p class="t" data-en="© 2026 GC Financial Services. All rights reserved." data-es="© 2026 GC Financial Services. Todos los derechos reservados.">© 2026 GC Financial Services. All rights reserved.</p>
         <p>Grupo Castillo · Mission, TX</p>
       </div>
     </div>
@@ -1404,6 +1435,18 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Language toggle
+    let currentLang = 'en';
+    function setLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.t').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (val) el.innerHTML = val;
+      });
+      document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+      document.getElementById('btnES').classList.toggle('active', lang === 'es');
+    }
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
