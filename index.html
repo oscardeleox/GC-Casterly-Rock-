@@ -589,48 +589,89 @@
       padding: 8rem 0;
     }
 
-    .why-layout {
+    .why-head {
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+    .why-head h2 { margin-bottom: 1.25rem; }
+    .why-head p {
+      font-size: 1.05rem;
+      color: var(--gray-700);
+    }
+
+    .compare-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8rem;
-      align-items: start;
-    }
-
-    .why-left h2 { margin-bottom: 1.5rem; }
-    .why-left p  { font-size: 1rem; margin-bottom: 2rem; }
-
-    .compare-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .compare-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--gray-100);
-      font-size: 0.875rem;
-    }
-    .compare-item:first-child { border-top: 1px solid var(--gray-100); }
-    .ico-yes { color: #16A34A; font-weight: 700; font-size: 0.9rem; }
-    .ico-no  { color: #DC2626; font-weight: 700; font-size: 0.9rem; }
-    .compare-item span:last-child { color: var(--gray-700); }
-
-    .why-right {
-      padding-top: 1rem;
-    }
-    .why-card {
       background: var(--gray-50);
       border: 1px solid var(--gray-100);
       border-radius: 16px;
-      padding: 2.5rem;
-      margin-bottom: 1rem;
+      padding: 2.75rem 0;
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
     }
-    .why-card:last-child { margin-bottom: 0; }
-    .why-card h4 { margin-bottom: 0.5rem; }
-    .why-card p  { font-size: 0.875rem; }
+    .compare-grid::before {
+      content: '';
+      position: absolute;
+      top: 2.75rem; bottom: 2.75rem;
+      left: 50%;
+      width: 1px;
+      background: var(--gray-200);
+    }
+    .compare-head {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      padding: 0 2.75rem 1.25rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .compare-head.good { color: var(--gold-dk); }
+
+    .compare-cell {
+      padding: 0.7rem 2.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      line-height: 1.55;
+    }
+    .ico-yes { color: #16A34A; font-weight: 700; font-size: 0.95rem; flex-shrink: 0; line-height: 1.5; }
+    .ico-no  { color: #DC2626; font-weight: 700; font-size: 0.95rem; flex-shrink: 0; line-height: 1.5; }
+
+    .why-closing {
+      text-align: center;
+      max-width: 680px;
+      margin: 4rem auto 0;
+      font-size: 1rem;
+      color: var(--gray-700);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .compare-grid {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1.75rem;
+      }
+      .compare-grid::before { display: none; }
+      .compare-head { padding: 0 0 1rem; margin-bottom: 0.5rem; }
+      .compare-cell { padding: 0.5rem 0; }
+      .compare-head.bad  { order: 0; }
+      .compare-cell.bad  { order: 1; }
+      .compare-head.good {
+        order: 2;
+        margin-top: 1.75rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--gray-200);
+      }
+      .compare-cell.good { order: 3; }
+    }
 
     /* ─────────────────────────────────────────────
        VALUES
@@ -850,7 +891,6 @@
       .section-intro { grid-template-columns: 1fr; gap: 2rem; }
       .ai-layout     { grid-template-columns: 1fr; }
       .ai-panel      { display: none; }
-      .why-layout    { grid-template-columns: 1fr; gap: 3rem; }
       .values-grid   { grid-template-columns: 1fr; }
       .footer-grid   { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
       .nav-links     { display: none; }
@@ -1277,43 +1317,40 @@
   ══════════════════════════════════════════ -->
   <section id="why">
     <div class="container">
-      <div class="why-layout">
 
-        <div class="why-left reveal">
-          <span class="eyebrow t" data-en="Why GC" data-es="Por Qué GC">Why GC</span>
-          <h2 class="t" data-en="The only firm doing both — in two languages." data-es="La única firma que hace ambas — en dos idiomas.">The only firm doing both — in two languages.</h2>
-          <p class="t" data-en="In the Rio Grande Valley, most firms pick one lane. We built the firm that has both." data-es="En el Valle del Río Grande, la mayoría de las firmas eligen un solo camino. Nosotros construimos la firma que tiene ambos.">
-            In the Rio Grande Valley, most firms pick one lane.
-            We built the firm that has both.
-          </p>
-          <ul class="compare-list">
-            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="Finance OR AI — not both" data-es="Finanzas O IA — no ambas">Finance OR AI — not both</span></li>
-            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="English only — no Spanish support" data-es="Solo inglés — sin apoyo en español">English only — no Spanish support</span></li>
-            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="Reactive — only calls when things break" data-es="Reactivos — solo llaman cuando algo falla">Reactive — only calls when things break</span></li>
-            <li class="compare-item"><span class="ico-no">✗</span><span class="t" data-en="Manual processes, no automation" data-es="Procesos manuales, sin automatización">Manual processes, no automation</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Finance AND AI under one roof" data-es="Finanzas Y automatización con IA bajo un mismo techo">Finance AND AI under one roof</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Fully bilingual — English &amp; Spanish" data-es="Completamente bilingüe — inglés y español">Fully bilingual — English &amp; Spanish</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Proactive — flags issues before you do" data-es="Proactivos — detectamos problemas antes que usted">Proactive — flags issues before you do</span></li>
-            <li class="compare-item"><span class="ico-yes">✓</span><span class="t" data-en="Custom automations built for your business" data-es="Automatizaciones personalizadas para su negocio">Custom automations built for your business</span></li>
-          </ul>
-        </div>
+      <div class="why-head reveal">
+        <span class="eyebrow t" data-en="Why GC" data-es="Por Qué GC">Why GC</span>
+        <h2 class="t" data-en="Run your business.<br>We'll run the numbers." data-es="Dirija su negocio.<br>Nosotros llevamos los números.">
+          Run your business.<br>We'll run the numbers.
+        </h2>
+        <p class="t" data-en="Bookkeeping, taxes, and automation — done right, done in two languages, and done before you even have to ask." data-es="Contabilidad, impuestos y automatización — hechos bien, en dos idiomas, y antes de que tenga que pedirlos.">
+          Bookkeeping, taxes, and automation — done right, done in two languages, and done before you even have to ask.
+        </p>
+      </div>
 
-        <div class="why-right reveal reveal-d2">
-          <div class="why-card">
-            <h4 class="t" data-en="Only firm in the Valley doing both" data-es="La única firma en el Valle que hace ambas">Only firm in the Valley doing both</h4>
-            <p class="t" data-en="No other firm in the Rio Grande Valley offers the combination of financial precision and AI implementation in English and Spanish." data-es="Ninguna otra firma en el Valle del Río Grande ofrece la combinación de precisión financiera e implementación de IA en inglés y español.">No other firm in the Rio Grande Valley offers the combination of financial precision and AI implementation in English and Spanish.</p>
-          </div>
-          <div class="why-card">
-            <h4 class="t" data-en="Proactive, not reactive" data-es="Proactivos, no reactivos">Proactive, not reactive</h4>
-            <p class="t" data-en="We monitor your finances continuously. We'll call you before a problem becomes expensive — not after." data-es="Monitoreamos sus finanzas continuamente. Le llamaremos antes de que un problema se vuelva costoso — no después.">We monitor your finances continuously. We'll call you before a problem becomes expensive — not after.</p>
-          </div>
-          <div class="why-card">
-            <h4 class="t" data-en="Built for small businesses" data-es="Diseñado para pequeñas empresas">Built for small businesses</h4>
-            <p class="t" data-en="Not enterprise software. Not cookie-cutter templates. Custom strategy built around how your specific business actually works." data-es="No es software empresarial. No son plantillas genéricas. Estrategia personalizada construida alrededor de cómo funciona su negocio específicamente.">Not enterprise software. Not cookie-cutter templates. Custom strategy built around how your specific business actually works.</p>
-          </div>
-        </div>
+      <div class="compare-grid reveal reveal-d1">
+
+        <div class="compare-head bad t" data-en="Most firms in the Valley" data-es="La mayoría de firmas en el Valle">Most firms in the Valley</div>
+        <div class="compare-head good t" data-en="Working with GC" data-es="Trabajando con GC">Working with GC</div>
+
+        <div class="compare-cell bad"><span class="ico-no">✗</span><span class="t" data-en="Finance OR AI — not both" data-es="Finanzas O IA — no ambas">Finance OR AI — not both</span></div>
+        <div class="compare-cell good"><span class="ico-yes">✓</span><span class="t" data-en="Finance AND AI under one roof" data-es="Finanzas Y IA bajo un mismo techo">Finance AND AI under one roof</span></div>
+
+        <div class="compare-cell bad"><span class="ico-no">✗</span><span class="t" data-en="English only" data-es="Solo inglés">English only</span></div>
+        <div class="compare-cell good"><span class="ico-yes">✓</span><span class="t" data-en="Fully bilingual — English &amp; Spanish" data-es="Completamente bilingüe — inglés y español">Fully bilingual — English &amp; Spanish</span></div>
+
+        <div class="compare-cell bad"><span class="ico-no">✗</span><span class="t" data-en="Reactive — only calls when things break" data-es="Reactivos — solo llaman cuando algo falla">Reactive — only calls when things break</span></div>
+        <div class="compare-cell good"><span class="ico-yes">✓</span><span class="t" data-en="Proactive — we flag issues before you do" data-es="Proactivos — detectamos problemas antes que usted">Proactive — we flag issues before you do</span></div>
+
+        <div class="compare-cell bad"><span class="ico-no">✗</span><span class="t" data-en="Manual processes, no automation" data-es="Procesos manuales, sin automatización">Manual processes, no automation</span></div>
+        <div class="compare-cell good"><span class="ico-yes">✓</span><span class="t" data-en="Custom automations built for your business" data-es="Automatizaciones personalizadas para su negocio">Custom automations built for your business</span></div>
 
       </div>
+
+      <p class="why-closing reveal reveal-d2 t" data-en="Bookkeeping, taxes, and AI automation — all under one roof, in two languages, built for the Valley." data-es="Contabilidad, impuestos y automatización con IA — todo bajo un mismo techo, en dos idiomas, hecho para el Valle.">
+        Bookkeeping, taxes, and AI automation — all under one roof, in two languages, built for the Valley.
+      </p>
+
     </div>
   </section>
 
