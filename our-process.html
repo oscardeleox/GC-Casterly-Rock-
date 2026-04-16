@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Process | GC Financial Services</title>
+  <meta name="description" content="Three steps to get started with GC Financial Services. Form, custom quote within 24 hours, free 30-minute consultation. Bilingual." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       RESET & VARIABLES  (identical to index.html)
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:     #FFFFFF;
+      --off-white: #FAFAFA;
+      --gray-50:   #F7F7F7;
+      --gray-100:  #EFEFEF;
+      --gray-200:  #E2E2E2;
+      --gray-400:  #ABABAB;
+      --gray-500:  #8A8A8A;
+      --gray-700:  #4A4A4A;
+      --black:     #0D0D0D;
+      --gold:      #C8A050;
+      --gold-dk:   #A07830;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.1;
+      color: var(--black);
+      letter-spacing: -0.03em;
+    }
+    h1 { font-size: clamp(2.6rem, 5.5vw, 4.5rem); font-weight: 700; }
+    h2 { font-size: clamp(2rem,   4vw,  3.5rem);  font-weight: 700; }
+    h3 { font-size: clamp(1.2rem, 2vw,  1.6rem);  font-weight: 600; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { color: var(--gray-700); font-size: 0.975rem; line-height: 1.75; }
+    a  { text-decoration: none; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+    section    { padding: 8rem 0; }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .eyebrow-gold { color: var(--gold-dk); }
+
+    /* ─────────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      padding: 0.8rem 1.75rem;
+      border-radius: 100px;
+      transition: all 0.18s ease;
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-black { background: var(--black); color: var(--white); }
+    .btn-black:hover { background: #333; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--black); border: 1.5px solid var(--gray-200); }
+    .btn-outline:hover { border-color: var(--black); transform: translateY(-1px); }
+    .btn-sm { font-size: 0.8rem; padding: 0.6rem 1.25rem; }
+    .btn-lg { font-size: 0.95rem; padding: 1rem 2.5rem; }
+
+    /* ─────────────────────────────────────────────
+       NAVIGATION
+    ───────────────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 9000;
+      padding: 0.5rem 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      transition: all 0.25s ease;
+    }
+    #nav.solid { box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 3rem;
+    }
+    .nav-logo { margin-left: -0.25rem; }
+    .nav-logo img {
+      height: 156px; width: auto; display: block;
+      mix-blend-mode: multiply;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 600;
+      color: var(--black);
+      transition: opacity 0.15s;
+    }
+    .nav-links a:hover { opacity: 0.65; }
+
+    .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+    .nav-right .btn { min-width: 150px; justify-content: center; }
+    .nav-phone {
+      font-size: 0.8rem; font-weight: 600; color: var(--black);
+      transition: opacity 0.15s;
+    }
+    .nav-phone:hover { opacity: 0.65; }
+
+    .nav-burger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--black); transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0;
+      background: var(--white); border-bottom: 1px solid var(--gray-100);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1rem; font-weight: 500; color: var(--black);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--gray-100);
+      transition: background 0.15s;
+    }
+    .mobile-menu a:hover { background: var(--gray-50); }
+    .mobile-menu .btn { margin: 1.25rem 2rem; align-self: flex-start; }
+
+    .lang-toggle {
+      display: flex; align-items: center; gap: 0;
+      background: var(--gray-100);
+      border-radius: 100px; padding: 3px;
+      border: 1px solid var(--gray-200);
+    }
+    .lang-btn {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      border: none; cursor: pointer;
+      background: transparent;
+      color: var(--gray-500);
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .lang-btn.active { background: var(--black); color: var(--white); }
+
+    /* ─────────────────────────────────────────────
+       PAGE HERO
+    ───────────────────────────────────────────── */
+    #process-hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      padding: 220px 0 6rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+    }
+    #process-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, var(--gray-200) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.6;
+    }
+    #process-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 820px;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 100px;
+      padding: 0.35rem 1rem 0.35rem 0.5rem;
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-tag-dot {
+      width: 22px; height: 22px;
+      background: var(--black);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--white);
+    }
+    #process-hero h1 { margin-bottom: 2rem; max-width: 720px; }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--gray-700);
+      max-width: 560px;
+      margin-bottom: 3rem;
+      font-weight: 400;
+    }
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
+    /* ─────────────────────────────────────────────
+       STEPS
+    ───────────────────────────────────────────── */
+    #steps {
+      background: var(--gray-50);
+      padding: 8rem 0;
+      border-top: 1px solid var(--gray-100);
+    }
+    .steps-head {
+      max-width: 620px;
+      margin-bottom: 5rem;
+    }
+    .steps-head h2 { margin-bottom: 1.25rem; }
+    .steps-head p { font-size: 1.05rem; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .step-card {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      transition: background 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .step-card:hover { background: var(--gray-50); }
+    .step-num {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gold-dk);
+      margin-bottom: 1.5rem;
+    }
+    .step-icon {
+      width: 48px; height: 48px;
+      background: var(--black);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.75rem;
+      color: white;
+    }
+    .step-card h3 { margin-bottom: 0.75rem; }
+    .step-card p { font-size: 0.92rem; }
+    .step-meta {
+      margin-top: auto;
+      padding-top: 2rem;
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ─────────────────────────────────────────────
+       DETAIL ROWS
+    ───────────────────────────────────────────── */
+    #details {
+      background: var(--white);
+      padding: 8rem 0;
+    }
+    .detail-head {
+      max-width: 620px;
+      margin: 0 auto 5rem;
+      text-align: center;
+    }
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 6rem;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      align-items: start;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-row:first-child { padding-top: 0; }
+
+    .detail-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gray-400);
+      margin-bottom: 0.75rem;
+    }
+    .detail-row h3 { margin-bottom: 0.5rem; font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
+    .detail-time {
+      font-size: 0.85rem;
+      color: var(--gold-dk);
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .detail-body p { margin-bottom: 1.25rem; }
+    .detail-body p:last-child { margin-bottom: 0; }
+    .detail-list {
+      list-style: none;
+      display: flex; flex-direction: column;
+      gap: 0.7rem;
+      margin-top: 1.5rem;
+    }
+    .detail-list li {
+      font-size: 0.92rem;
+      color: var(--gray-700);
+      display: flex; align-items: flex-start;
+      gap: 0.7rem;
+      line-height: 1.6;
+    }
+    .detail-list li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 0.65rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       REASSURANCE STRIP
+    ───────────────────────────────────────────── */
+    #reassure {
+      background: var(--gray-50);
+      padding: 6rem 0;
+      border-top: 1px solid var(--gray-100);
+    }
+    .reassure-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .reassure-card {
+      background: var(--white);
+      padding: 2.5rem;
+      transition: background 0.2s;
+    }
+    .reassure-card:hover { background: var(--gray-50); }
+    .reassure-icon {
+      color: var(--gold-dk);
+      margin-bottom: 1rem;
+    }
+    .reassure-card h4 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .reassure-card p { font-size: 0.875rem; }
+
+    /* ─────────────────────────────────────────────
+       BILINGUAL STRIP (matches homepage exactly)
+    ───────────────────────────────────────────── */
+    #bilingual {
+      background: var(--black);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    #bilingual h2 {
+      color: white;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+    #bilingual h2 span {
+      display: block;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.75em;
+      font-weight: 400;
+      margin-top: 0.5rem;
+    }
+    #bilingual p {
+      color: rgba(255,255,255,0.45);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 0.5rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       CTA
+    ───────────────────────────────────────────── */
+    #cta {
+      background: var(--white);
+      padding: 10rem 0;
+      text-align: center;
+      border-top: 1px solid var(--gray-100);
+    }
+    #cta h2 { max-width: 640px; margin: 0 auto 1.5rem; }
+    #cta > .container > p {
+      font-size: 1.05rem;
+      max-width: 460px;
+      margin: 0 auto 3rem;
+    }
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+    .cta-note {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .cta-note a { color: var(--black); text-decoration: none; }
+    .cta-note a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    footer {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-100);
+      padding: 5rem 0 3rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+    .footer-brand img { height: 60px; width: auto; margin-bottom: 1.25rem; display: block; }
+    .footer-brand p { font-size: 0.85rem; max-width: 260px; margin-bottom: 1.5rem; }
+    .footer-contact a {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      transition: color 0.15s;
+    }
+    .footer-contact a:hover { color: var(--black); }
+    .footer-col h5 {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col ul a {
+      font-size: 0.875rem; color: var(--gray-700);
+      transition: color 0.15s;
+    }
+    .footer-col ul a:hover { color: var(--black); }
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-100);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { font-size: 0.78rem; color: var(--gray-400); }
+
+    /* ─────────────────────────────────────────────
+       SCROLL REVEAL
+    ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1),
+                  transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .steps-grid     { grid-template-columns: 1fr; }
+      .reassure-grid  { grid-template-columns: 1fr; }
+      .detail-row     { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-grid    { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .nav-links      { display: none; }
+      .nav-phone      { display: none; }
+      .nav-burger     { display: flex; }
+    }
+    @media (max-width: 600px) {
+      section         { padding: 5rem 0; }
+      .footer-grid    { grid-template-columns: 1fr; }
+      .footer-bottom  { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .step-card      { padding: 2.5rem 2rem; }
+      #process-hero   { padding: 180px 0 4rem; min-height: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════ NAVIGATION ═══════════ -->
+  <nav id="nav">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="index.html" class="nav-logo">
+          <img src="casterly_rock_strategy_1.png" alt="GC Financial Services" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html#finance" class="t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</a></li>
+          <li><a href="index.html#ai" class="t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</a></li>
+          <li><a href="index.html#why" class="t" data-en="About" data-es="Nosotros">About</a></li>
+          <li><a href="index.html#values" class="t" data-en="Values" data-es="Valores">Values</a></li>
+          <li><a href="get-quote.html" class="t" data-en="Get a Quote" data-es="Cotización">Get a Quote</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btnEN" onclick="setLang('en')">English</button>
+            <button class="lang-btn" id="btnES" onclick="setLang('es')">Spanish</button>
+          </div>
+          <a href="tel:9567772551" class="nav-phone">(956) 777-2551</a>
+          <a href="index.html#cta" class="btn btn-black btn-sm t" data-en="Book a Call" data-es="Reservar Llamada">Book a Call</a>
+        </div>
+
+        <button class="nav-burger" id="burger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#finance" onclick="closeMobile()" class="t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</a>
+      <a href="index.html#ai"      onclick="closeMobile()" class="t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</a>
+      <a href="index.html#why"     onclick="closeMobile()" class="t" data-en="About" data-es="Nosotros">About</a>
+      <a href="index.html#values"  onclick="closeMobile()" class="t" data-en="Values" data-es="Valores">Values</a>
+      <a href="get-quote.html"     onclick="closeMobile()" class="t" data-en="Get a Quote" data-es="Cotización">Get a Quote</a>
+      <a href="index.html#cta" class="btn btn-black t" onclick="closeMobile()" data-en="Book a Call" data-es="Reservar Llamada">Book a Call</a>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="process-hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-tag">
+          <div class="hero-tag-dot">GC</div>
+          <span class="t" data-en="Our Process · Three Steps · Free to Start" data-es="Nuestro Proceso · Tres Pasos · Empezar Es Gratis">Our Process · Three Steps · Free to Start</span>
+        </div>
+
+        <h1 class="t" data-en="From hello to handled.<br>In three simple steps." data-es="De hola a resuelto.<br>En tres pasos simples.">
+          From hello to handled.<br>In three simple steps.
+        </h1>
+
+        <p class="hero-sub t" data-en="No jargon. No surprises. Here's exactly what happens once you reach out — and how fast we move." data-es="Sin tecnicismos. Sin sorpresas. Esto es exactamente lo que sucede cuando se comunica con nosotros — y qué tan rápido nos movemos.">
+          No jargon. No surprises. Here's exactly what happens once you reach out — and how fast we move.
+        </p>
+
+        <div class="hero-actions">
+          <a href="get-quote.html" class="btn btn-black t" data-en="Start My Quote →" data-es="Iniciar Mi Cotización →">Start My Quote →</a>
+          <a href="#steps" class="btn btn-outline t" data-en="See the Steps" data-es="Ver los Pasos">See the Steps</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ STEPS OVERVIEW ═══════════ -->
+  <section id="steps">
+    <div class="container">
+
+      <div class="steps-head reveal">
+        <span class="eyebrow t" data-en="The Process" data-es="El Proceso">The Process</span>
+        <h2 class="t" data-en="Three steps. That's it." data-es="Tres pasos. Eso es todo.">Three steps. That's it.</h2>
+        <p class="t" data-en="We've stripped out the back-and-forth most firms put you through. You give us the basics, we send a clear quote, then we talk." data-es="Eliminamos el ida y vuelta que la mayoría de las firmas le hacen pasar. Usted nos da lo básico, le enviamos una cotización clara, y luego hablamos.">
+          We've stripped out the back-and-forth most firms put you through. You give us the basics, we send a clear quote, then we talk.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+
+        <div class="step-card reveal">
+          <div class="step-num">STEP 01</div>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="13" x2="15" y2="13"/>
+              <line x1="9" y1="17" x2="15" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="t" data-en="You fill out the form" data-es="Usted llena el formulario">You fill out the form</h3>
+          <p class="t" data-en="Five short sections about your business, your situation, and what you need. About 5 minutes. Skip what doesn't apply." data-es="Cinco secciones cortas sobre su negocio, su situación y lo que necesita. Unos 5 minutos. Omita lo que no aplique.">
+            Five short sections about your business, your situation, and what you need. About 5 minutes. Skip what doesn't apply.
+          </p>
+          <div class="step-meta t" data-en="~ 5 minutes" data-es="~ 5 minutos">~ 5 minutes</div>
+        </div>
+
+        <div class="step-card reveal reveal-d1">
+          <div class="step-num">STEP 02</div>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 class="t" data-en="We review and quote you" data-es="Revisamos y le cotizamos">We review and quote you</h3>
+          <p class="t" data-en="A real person at GC reviews what you sent and prepares custom pricing. No template. No generic packages. We respond within 24 hours." data-es="Una persona real de GC revisa lo que envió y prepara precios personalizados. Sin plantillas. Sin paquetes genéricos. Respondemos en 24 horas.">
+            A real person at GC reviews what you sent and prepares custom pricing. No template. No generic packages. We respond within 24 hours.
+          </p>
+          <div class="step-meta t" data-en="Within 24 hours" data-es="En 24 horas">Within 24 hours</div>
+        </div>
+
+        <div class="step-card reveal reveal-d2">
+          <div class="step-num">STEP 03</div>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3 class="t" data-en="Free 30-minute call" data-es="Llamada gratis de 30 minutos">Free 30-minute call</h3>
+          <p class="t" data-en="We hop on a call (English or Spanish) to walk through the quote, answer your questions, and confirm the plan. Only after that do you decide." data-es="Tenemos una llamada (en inglés o español) para repasar la cotización, responder sus preguntas y confirmar el plan. Solo después usted decide.">
+            We hop on a call (English or Spanish) to walk through the quote, answer your questions, and confirm the plan. Only after that do you decide.
+          </p>
+          <div class="step-meta t" data-en="No commitment" data-es="Sin compromiso">No commitment</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ DETAIL ROWS ═══════════ -->
+  <section id="details">
+    <div class="container">
+
+      <div class="detail-head reveal">
+        <span class="eyebrow eyebrow-gold t" data-en="What to Expect" data-es="Qué Esperar">What to Expect</span>
+        <h2 class="t" data-en="A closer look at each step." data-es="Una mirada más cercana a cada paso.">A closer look at each step.</h2>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">01</div>
+          <h3 class="t" data-en="Fill out the form" data-es="Llene el formulario">Fill out the form</h3>
+          <div class="detail-time t" data-en="~ 5 minutes" data-es="~ 5 minutos">~ 5 minutes</div>
+        </div>
+        <div class="detail-body">
+          <p class="t" data-en="The form is broken into five sections so it doesn't feel overwhelming. We ask what we need to give you a real quote — nothing more." data-es="El formulario está dividido en cinco secciones para que no se sienta abrumador. Preguntamos lo que necesitamos para darle una cotización real — nada más.">
+            The form is broken into five sections so it doesn't feel overwhelming. We ask what we need to give you a real quote — nothing more.
+          </p>
+          <ul class="detail-list">
+            <li class="t" data-en="Your contact info and how you'd like us to reach you (English, Spanish, or both)" data-es="Su información de contacto y cómo prefiere que le contactemos (inglés, español o ambos)">Your contact info and how you'd like us to reach you (English, Spanish, or both)</li>
+            <li class="t" data-en="A quick snapshot of your business — type, size, structure" data-es="Una visión rápida de su negocio — tipo, tamaño, estructura">A quick snapshot of your business — type, size, structure</li>
+            <li class="t" data-en="What services you're looking for, even if you're not 100% sure" data-es="Qué servicios busca, aunque no esté 100% seguro">What services you're looking for, even if you're not 100% sure</li>
+            <li class="t" data-en="Where things stand today — what software, how current your books are" data-es="Dónde están las cosas hoy — qué software, qué tan al día están sus libros">Where things stand today — what software, how current your books are</li>
+            <li class="t" data-en="Your timeline, budget range, and biggest pain point" data-es="Su plazo, rango de presupuesto y mayor problema">Your timeline, budget range, and biggest pain point</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">02</div>
+          <h3 class="t" data-en="We review and prepare your quote" data-es="Revisamos y preparamos su cotización">We review and prepare your quote</h3>
+          <div class="detail-time t" data-en="Within 24 hours" data-es="En 24 horas">Within 24 hours</div>
+        </div>
+        <div class="detail-body">
+          <p class="t" data-en="A real person at GC — not a chatbot — sits down with what you sent. We figure out exactly what you need, what we'd actually do, and what it should cost." data-es="Una persona real de GC — no un chatbot — se sienta con lo que envió. Definimos exactamente qué necesita, qué haríamos, y cuánto debería costar.">
+            A real person at GC — not a chatbot — sits down with what you sent. We figure out exactly what you need, what we'd actually do, and what it should cost.
+          </p>
+          <ul class="detail-list">
+            <li class="t" data-en="Custom pricing built for your situation — not a generic package" data-es="Precios personalizados para su situación — no un paquete genérico">Custom pricing built for your situation — not a generic package</li>
+            <li class="t" data-en="A clear list of what's included — no fine print, no surprises" data-es="Una lista clara de lo incluido — sin letra pequeña, sin sorpresas">A clear list of what's included — no fine print, no surprises</li>
+            <li class="t" data-en="Sent your way through the contact method you chose" data-es="Enviado por el método de contacto que eligió">Sent your way through the contact method you chose</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">03</div>
+          <h3 class="t" data-en="Free 30-minute consultation" data-es="Consulta gratis de 30 minutos">Free 30-minute consultation</h3>
+          <div class="detail-time t" data-en="No commitment" data-es="Sin compromiso">No commitment</div>
+        </div>
+        <div class="detail-body">
+          <p class="t" data-en="Once you've seen the quote, we hop on a quick call to walk you through it. This is when you ask the hard questions." data-es="Una vez que vea la cotización, tenemos una llamada rápida para repasarla. Aquí es cuando hace las preguntas difíciles.">
+            Once you've seen the quote, we hop on a quick call to walk you through it. This is when you ask the hard questions.
+          </p>
+          <ul class="detail-list">
+            <li class="t" data-en="Walk through the quote line by line so you know exactly what you're getting" data-es="Repasamos la cotización línea por línea para que sepa exactamente qué recibe">Walk through the quote line by line so you know exactly what you're getting</li>
+            <li class="t" data-en="Talk through your goals — and tell you honestly if we're the right fit" data-es="Hablamos de sus objetivos — y le decimos honestamente si somos el ajuste correcto">Talk through your goals — and tell you honestly if we're the right fit</li>
+            <li class="t" data-en="Conducted in English or Spanish — your choice" data-es="En inglés o español — usted elige">Conducted in English or Spanish — your choice</li>
+            <li class="t" data-en="Only after the call do you decide whether to move forward. Zero pressure." data-es="Solo después de la llamada decide si avanza. Cero presión.">Only after the call do you decide whether to move forward. Zero pressure.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════ REASSURANCE ═══════════ -->
+  <section id="reassure">
+    <div class="container">
+
+      <div class="steps-head reveal" style="text-align:center;margin-left:auto;margin-right:auto;">
+        <span class="eyebrow t" data-en="What You Won't Get" data-es="Lo Que No Recibirá">What You Won't Get</span>
+        <h2 class="t" data-en="A few things you won't have to deal with." data-es="Algunas cosas con las que no tendrá que lidiar.">A few things you won't have to deal with.</h2>
+      </div>
+
+      <div class="reassure-grid">
+
+        <div class="reassure-card reveal">
+          <div class="reassure-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+            </svg>
+          </div>
+          <h4 class="t" data-en="No high-pressure sales" data-es="Sin ventas a presión">No high-pressure sales</h4>
+          <p class="t" data-en="We tell you the truth about what you need. If we're not the right fit, we'll say so." data-es="Le decimos la verdad sobre lo que necesita. Si no somos el ajuste correcto, lo diremos.">
+            We tell you the truth about what you need. If we're not the right fit, we'll say so.
+          </p>
+        </div>
+
+        <div class="reassure-card reveal reveal-d1">
+          <div class="reassure-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h4 class="t" data-en="No spam, ever" data-es="Sin spam, nunca">No spam, ever</h4>
+          <p class="t" data-en="What you share stays between us. We don't sell, share, or use your info for anything else." data-es="Lo que comparte queda entre nosotros. No vendemos, compartimos ni usamos su información para nada más.">
+            What you share stays between us. We don't sell, share, or use your info for anything else.
+          </p>
+        </div>
+
+        <div class="reassure-card reveal reveal-d2">
+          <div class="reassure-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </div>
+          <h4 class="t" data-en="No hidden fees" data-es="Sin tarifas ocultas">No hidden fees</h4>
+          <p class="t" data-en="The quote we send is the quote you pay. Anything that changes, we discuss before it happens." data-es="La cotización que enviamos es lo que paga. Cualquier cambio, lo discutimos antes.">
+            The quote we send is the quote you pay. Anything that changes, we discuss before it happens.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ BILINGUAL STRIP ═══════════ -->
+  <section id="bilingual">
+    <div class="container">
+      <div class="reveal" style="max-width:720px;margin:0 auto;text-align:center;">
+        <h2>
+          We work in both languages.
+          <span>Trabajamos en los dos idiomas.</span>
+        </h2>
+        <p>Your business doesn't stop at a language barrier — and neither do we.</p>
+        <p style="margin-top:0.35rem;color:rgba(255,255,255,0.25);font-size:0.875rem;">Su negocio no tiene barreras — nosotros tampoco.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section id="cta">
+    <div class="container">
+      <span class="eyebrow reveal t" style="display:block;text-align:center;" data-en="Ready When You Are" data-es="Listos Cuando Usted Lo Esté">Ready When You Are</span>
+      <h2 class="reveal reveal-d1 t" data-en="Start your quote.<br>It's free, and it's fast." data-es="Inicie su cotización.<br>Es gratis, y es rápido.">Start your quote.<br>It's free, and it's fast.</h2>
+      <p class="reveal reveal-d2 t" data-en="Five minutes now saves you the hours of back-and-forth most firms put you through. Custom pricing in your inbox within 24 hours." data-es="Cinco minutos ahora le ahorran horas de ida y vuelta que la mayoría de las firmas le hacen pasar. Precios personalizados en su bandeja en 24 horas.">
+        Five minutes now saves you the hours of back-and-forth most firms put you through. Custom pricing in your inbox within 24 hours.
+      </p>
+      <div class="cta-row reveal reveal-d3">
+        <a href="get-quote.html" class="btn btn-black btn-lg t" data-en="Start Your Quote →" data-es="Iniciar Su Cotización →">Start Your Quote →</a>
+        <a href="tel:9567772551" class="btn btn-outline">📞 (956) 777-2551</a>
+      </div>
+      <p class="cta-note t" data-en='Or email <a href="mailto:info@gcfinancialservices.org">info@gcfinancialservices.org</a> · Available in English &amp; Spanish' data-es='O escríbanos a <a href="mailto:info@gcfinancialservices.org">info@gcfinancialservices.org</a> · Disponible en inglés y español'>
+        Or email <a href="mailto:info@gcfinancialservices.org">info@gcfinancialservices.org</a> · Available in English &amp; Spanish
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="casterly_rock_strategy_1.png" alt="GC Financial Services" />
+          <p class="t" data-en="Financial precision and AI automation for small businesses in the Rio Grande Valley. Bilingual. Proactive. Results-driven." data-es="Precisión financiera y automatización con IA para pequeñas empresas en el Valle del Río Grande. Bilingüe. Proactivo. Orientado a resultados.">Financial precision and AI automation for small businesses in the Rio Grande Valley. Bilingual. Proactive. Results-driven.</p>
+          <div class="footer-contact">
+            <a href="mailto:info@gcfinancialservices.org">✉ info@gcfinancialservices.org</a>
+            <a href="tel:9567772551">📞 (956) 777-2551</a>
+            <a href="#">📍 Mission, TX — Rio Grande Valley</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="t" data-en="Financial Services" data-es="Servicios Financieros">Financial Services</h5>
+          <ul>
+            <li><a href="index.html#finance" class="t" data-en="Finance Management" data-es="Gestión Financiera">Finance Management</a></li>
+            <li><a href="index.html#finance" class="t" data-en="Tax Solutions" data-es="Soluciones Fiscales">Tax Solutions</a></li>
+            <li><a href="index.html#finance" class="t" data-en="Growth Advisory" data-es="Asesoría de Crecimiento">Growth Advisory</a></li>
+            <li><a href="index.html#finance" class="t" data-en="Portfolio Strategy" data-es="Estrategia de Portafolio">Portfolio Strategy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="t" data-en="AI Automation" data-es="Automatización con IA">AI Automation</h5>
+          <ul>
+            <li><a href="index.html#ai" class="t" data-en="Workflow Automation" data-es="Automatización de Flujos">Workflow Automation</a></li>
+            <li><a href="index.html#ai" class="t" data-en="System Integration" data-es="Integración de Sistemas">System Integration</a></li>
+            <li><a href="index.html#ai" class="t" data-en="AI Reporting" data-es="Reportes con IA">AI Reporting</a></li>
+            <li><a href="index.html#ai" class="t" data-en="Website Development" data-es="Desarrollo Web">Website Development</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="t" data-en="Company" data-es="Empresa">Company</h5>
+          <ul>
+            <li><a href="index.html#why" class="t" data-en="About GC" data-es="Sobre GC">About GC</a></li>
+            <li><a href="index.html#values" class="t" data-en="Our Values" data-es="Nuestros Valores">Our Values</a></li>
+            <li><a href="get-quote.html" class="t" data-en="Get a Quote" data-es="Cotización">Get a Quote</a></li>
+            <li><a href="our-process.html" class="t" data-en="Our Process" data-es="Nuestro Proceso">Our Process</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="t" data-en="© 2026 GC Financial Services. All rights reserved." data-es="© 2026 GC Financial Services. Todos los derechos reservados.">© 2026 GC Financial Services. Todos los derechos reservados.</p>
+        <p>Grupo Castillo · Mission, TX</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════ JAVASCRIPT ═══════════ -->
+  <script>
+    // Sticky nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('solid', window.scrollY > 40);
+    });
+
+    // Mobile menu
+    const burger     = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Language toggle
+    let currentLang = 'en';
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.t').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (val !== null) el.innerHTML = val;
+      });
+      document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+      document.getElementById('btnES').classList.toggle('active', lang === 'es');
+    }
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
