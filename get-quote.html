@@ -574,14 +574,18 @@
       <div class="form-wrap">
 
         <!--
-          ╔══════════════════════════════════════════════════╗
-          ║  FORMSPREE SETUP — REPLACE THIS FORM ACTION URL  ║
-          ║  1. Sign up at https://formspree.io              ║
-          ║  2. Create a new form, copy your endpoint URL    ║
-          ║  3. Replace YOUR_FORM_ID below with your ID      ║
-          ╚══════════════════════════════════════════════════╝
+          Form delivery: FormSubmit (formsubmit.co)
+          Submissions email to info@gcfinancialservices.org with a CC to oscardeleox@gmail.com.
+          First-time activation: submit the form once after deploy, then click the
+          activation link FormSubmit emails to info@gcfinancialservices.org.
         -->
-        <form id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <form id="quoteForm" action="https://formsubmit.co/ajax/info@gcfinancialservices.org" method="POST" novalidate>
+
+          <!-- FormSubmit configuration -->
+          <input type="hidden" name="_cc" value="oscardeleox@gmail.com">
+          <input type="hidden" name="_subject" value="New quote request from gcfinancialservices.org">
+          <input type="hidden" name="_template" value="table">
+          <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
 
           <!-- ───── SECTION 1 — CONTACT ───── -->
           <div class="form-section reveal">
